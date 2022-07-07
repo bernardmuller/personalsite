@@ -1,5 +1,5 @@
 # personalsite
 
-This is my personal site where I display my work.
+This is my personal site where I display showcase work.
 
 https://bernardmuller.dev
