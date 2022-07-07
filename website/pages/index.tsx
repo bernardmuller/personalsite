@@ -28,18 +28,6 @@ const Home: NextPage = () => {
 				></div>
 
 				<Window />
-
-				<span
-					style={{
-						color: "grey",
-						position: "absolute",
-						bottom: "0.5rem",
-						right: "0.5rem",
-						fontSize: "12px",
-					}}
-				>
-					work in progress..
-				</span>
 			</main>
 		</div>
 	);
