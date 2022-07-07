@@ -38,7 +38,7 @@ export class Window extends React.Component {
 							borderTopLeftRadius: "10px",
 							justifyContent: "center",
 							width: "100%",
-							boxShadow: "rgba(0, 0, 0, 0.2) 0px 20px 30px",
+							boxShadow: "rgba(0, 0, 0, 0.2)",
 							alignItems: "center",
 							zIndex: "10",
 						}}
@@ -82,6 +82,7 @@ export class Window extends React.Component {
 						height="93%"
 						id="inlineFrameExample"
 						title="Inline Frame Example"
+						style={{ border: "none", padding: "0.2rem" }}
 					/>
 				</div>
 			</Draggable>
