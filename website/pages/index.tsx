@@ -15,7 +15,7 @@ const Home: NextPage = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<main className={styles.main}>
+			<main className={styles.main} style={{ position: "relative" }}>
 				<div
 					style={{
 						backgroundImage: `url(https://wallpaperaccess.com/full/752854.jpg)`,
@@ -24,6 +24,7 @@ const Home: NextPage = () => {
 						height: "100%",
 						backgroundRepeat: "no-repeat",
 						backgroundSize: "100% 100%",
+						zIndex: "-10",
 					}}
 				></div>
 
