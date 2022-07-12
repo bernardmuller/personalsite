@@ -1,11 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
+import Main from "../components/Main";
 import { Window } from "../components/Window";
-import styles from "../styles/Home.module.css";
+import { NextSeo } from "next-seo";
 
 const Home: NextPage = () => {
 	return (
-		<div className={styles.container}>
+		<div className="h-screen w-screen">
 			<Head>
 				<title>Bernard Muller</title>
 				<meta
@@ -14,22 +16,24 @@ const Home: NextPage = () => {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-
-			<main className={styles.main} style={{ position: "relative" }}>
-				<div
-					style={{
-						backgroundImage: `url(https://wallpaperaccess.com/full/752854.jpg)`,
-						position: "fixed",
-						width: "100%",
-						height: "100%",
-						backgroundRepeat: "no-repeat",
-						backgroundSize: "100% 100%",
-						zIndex: "-10",
-					}}
-				></div>
-
-				<Window />
-			</main>
+			<Image
+				src={"https://wallpaperaccess.com/full/752854.jpg"}
+				alt="background"
+				layout="fill"
+				className="fixed -z-10"
+			/>
+			<Main>
+				<Window>
+					<iframe
+						src="https://bernardmuller.netlify.app/"
+						width="100%"
+						height="100%"
+						id="inlineFrameExample"
+						title="Inline Frame Example"
+						className="bg-white p-0 border-none"
+					/>
+				</Window>
+			</Main>
 		</div>
 	);
 };
