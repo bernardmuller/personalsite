@@ -8,11 +8,11 @@ const spring = {
 	damping: 20,
 };
 
-export const Window = ({ children }) => {
+export const Window = ({ children }: { children: any }) => {
 	const controls = useDragControls();
 	const [fullScreen, setFullScreen] = useState(false);
 
-	function startDrag(event) {
+	function startDrag(event: any) {
 		controls.start(event);
 	}
 	return (
@@ -21,13 +21,13 @@ export const Window = ({ children }) => {
 			dragListener={false}
 			dragControls={controls}
 			dragMomentum={false}
-			className="w-screen h-screen flex justify-center items-center"
+			className="w-screen h-screen flex justify-center items-center relative"
 		>
 			<motion.div
 				layout
 				transition={spring}
 				className={`${
-					fullScreen ? "w-screen h-screen" : "w-3/6 h-4/6"
+					fullScreen ? "w-full h-full" : "w-3/6 h-4/6"
 				} bg-slate-100 shadow-lg rounded-xl border border-solid border-zinc-400 z-0 overflow-hidden`}
 			>
 				<div

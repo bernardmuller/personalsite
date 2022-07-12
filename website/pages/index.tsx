@@ -3,7 +3,6 @@ import Head from "next/head";
 import Image from "next/image";
 import Main from "../components/Main";
 import { Window } from "../components/Window";
-import { NextSeo } from "next-seo";
 
 const Home: NextPage = () => {
 	return (

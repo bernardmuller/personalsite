@@ -3,7 +3,13 @@ import { HiMinus } from "react-icons/hi";
 import { IoMdArrowDropup } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 
-const WindowActionButtons = ({ fullScreen, onFullScreen }) => {
+const WindowActionButtons = ({
+	fullScreen,
+	onFullScreen,
+}: {
+	fullScreen: boolean;
+	onFullScreen: any;
+}) => {
 	const [hover, setHover] = useState(false);
 	return (
 		<div
