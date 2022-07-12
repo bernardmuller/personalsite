@@ -13,7 +13,7 @@ const WindowActionButtons = ({
 	const [hover, setHover] = useState(false);
 	return (
 		<div
-			className="flex gap-2 absolute left-3"
+			className="flex gap-2 absolute left-2.5"
 			onMouseEnter={() => setHover(true)}
 			onMouseLeave={() => setHover(false)}
 		>

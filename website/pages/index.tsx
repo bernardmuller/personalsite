@@ -2,7 +2,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Main from "../components/Main";
-import { Window } from "../components/Window";
+import Taskbar from "../components/Taskbar";
+import Window from "../components/Window";
 
 const Home: NextPage = () => {
 	return (
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
+			<Taskbar />
 			<Image
 				src={"https://wallpaperaccess.com/full/752854.jpg"}
 				alt="background"
@@ -22,7 +24,7 @@ const Home: NextPage = () => {
 				className="fixed -z-10"
 			/>
 			<Main>
-				<Window>
+				<Window title="Bernard Muller">
 					<iframe
 						src="https://bernardmuller.netlify.app/"
 						width="100%"
