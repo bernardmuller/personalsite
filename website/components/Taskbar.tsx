@@ -9,7 +9,7 @@ const Taskbar = () => {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setDate(format(new Date(), "E d LLL H:mm"));
-		}, 60000);
+		}, 1000);
 
 		return () => clearInterval(interval);
 	});
