@@ -4,6 +4,7 @@ import Image from "next/image";
 import Main from "../components/Main";
 import Taskbar from "../components/Taskbar";
 import Window from "../components/Window";
+import WindowManager from "../components/WindowManager";
 
 const Home: NextPage = () => {
 	return (
@@ -17,23 +18,10 @@ const Home: NextPage = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Taskbar />
-			<Image
-				src={"https://wallpaperaccess.com/full/752854.jpg"}
-				alt="background"
-				layout="fill"
-				className="fixed -z-10"
-			/>
+
+			<div className="w-full h-full bg-mac-bg bg-cover -z-100" />
 			<Main>
-				<Window title="Bernard Muller">
-					<iframe
-						src="https://bernardmuller.netlify.app/"
-						width="100%"
-						height="100%"
-						id="inlineFrameExample"
-						title="Inline Frame Example"
-						className="bg-white p-0 border-none"
-					/>
-				</Window>
+				<WindowManager profile={false} />
 			</Main>
 		</div>
 	);

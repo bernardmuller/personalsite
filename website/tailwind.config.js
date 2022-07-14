@@ -39,6 +39,12 @@ module.exports = {
 				"-translate-x-3px": "-3px",
 				"-translate-x-2px": "-2px",
 			},
+			backgroundImage: {
+				"mac-bg": "url('/bg.jpeg')",
+			},
+			borderRadius: {
+				"sm-1": "0.225rem",
+			},
 		},
 	},
 	plugins: [],
