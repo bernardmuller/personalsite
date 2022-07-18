@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const TaskbarMenuItem = () => {
+const TaskbarMenuItem = ({ item }: { item: Object }) => {
 	return (
 		<button
 			onClick={() => {
@@ -8,7 +8,7 @@ const TaskbarMenuItem = () => {
 			}}
 			className={`w-full flex flex-col hover:bg-sky-700 rounded-sm-1 px-3 py-0.5 text-white`}
 		>
-			About this Mac
+			{item.title}
 		</button>
 	);
 };

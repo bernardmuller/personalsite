@@ -17,10 +17,9 @@ const Home: NextPage = () => {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Taskbar />
 
-			<div className="w-full h-full bg-mac-bg bg-cover -z-100" />
 			<Main>
+				<div className="w-full h-full bg-mac-bg bg-cover -z-100" />
 				<WindowManager profile={false} />
 			</Main>
 		</div>

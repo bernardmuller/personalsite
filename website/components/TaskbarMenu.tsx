@@ -6,6 +6,7 @@ export default function TaskbarMenu({
 	title,
 	focused,
 	active,
+	item,
 	onClick,
 	onActive,
 }: {
@@ -13,6 +14,7 @@ export default function TaskbarMenu({
 	active: number | null;
 	title: any;
 	focused: boolean;
+	item: Object;
 	onClick: (id: number) => any;
 	onActive: (id: number) => any;
 }) {
@@ -40,11 +42,15 @@ export default function TaskbarMenu({
 			</button>
 			{active == id && (
 				<div className="flex flex-col items-center absolute bg-stone-900/60 border border-stone-500 top-7  w-60 p-1 rounded-lg z-50">
-					<TaskbarMenuItem />
-
-					<div className=" border-b my-1 border-stone-500 w-11/12" />
-					<TaskbarMenuItem />
-					<TaskbarMenuItem />
+					{item?.menu?.map((item) => (
+						<>
+							{item.type == "2" ? (
+								<div className=" border-b my-1 border-stone-500 w-11/12" />
+							) : (
+								<TaskbarMenuItem key={item.title} item={item} />
+							)}
+						</>
+					))}
 				</div>
 			)}
 		</div>
