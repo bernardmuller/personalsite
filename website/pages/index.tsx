@@ -19,7 +19,7 @@ const Home: NextPage = () => {
 			</Head>
 
 			<Main>
-				<div className="w-full h-full bg-mac-bg bg-cover -z-100" />
+				<div className="w-full h-full bg-mac-bg-2 bg-cover bg-center bg-no-repeat -z-100" />
 				<WindowManager profile={false} />
 			</Main>
 		</div>

@@ -41,6 +41,13 @@ module.exports = {
 			},
 			backgroundImage: {
 				"mac-bg": "url('/bg.jpeg')",
+				"mac-bg-2": "url('/bg-2.jpeg')",
+				"mac-bg-3": "url('/bg-3.jpeg')",
+				"mac-bg-4": "url('/bg-4.jpeg')",
+				"mac-bg-5": "url('/bg-5.jpeg')",
+				"mac-bg-6": "url('/bg-6.jpeg')",
+				"mac-bg-7": "url('/bg-7.jpeg')",
+				"mac-bg-8": "url('/bg-8.jpeg')",
 			},
 			borderRadius: {
 				"sm-1": "0.225rem",
