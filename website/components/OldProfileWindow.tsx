@@ -1,9 +1,9 @@
 import React from "react";
 import Window from "./Window";
 
-const OldProfileWindow = () => {
+const OldProfileWindow = ({ onClose }: { onClose: () => any }) => {
 	return (
-		<Window title="Bernard Muller">
+		<Window title="Bernard Muller" onClose={onClose}>
 			<iframe
 				src="https://bernardmuller.netlify.app/"
 				width="100%"

@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 
-const TaskbarMenuItem = ({ item }: { item: Object }) => {
+const TaskbarMenuItem = ({ item }: { item: any }) => {
 	return (
 		<button
 			onClick={() => {
-				alert("works");
+				if (item.action) {
+					item?.action();
+				}
 			}}
-			className={`w-full flex flex-col hover:bg-sky-700 rounded-sm-1 px-3 py-0.5 text-white`}
+			className={`w-full flex gap-2 hover:bg-sky-700 rounded-sm-1 px-3 py-0.5 text-white`}
 		>
+			{item.iconLeft && item.iconLeft}
 			{item.title}
 		</button>
 	);

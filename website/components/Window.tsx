@@ -1,8 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { motion, useDragControls } from "framer-motion";
 import WindowActionButtons from "./WindowActionButtons";
 
-const Window = ({ children, title }: { children: any; title: string }) => {
+const Window = ({
+	children,
+	title,
+	onClose,
+}: {
+	children: any;
+	title: string;
+	onClose: () => any;
+}) => {
 	const controls = useDragControls();
 	const [fullScreen, setFullScreen] = useState(false);
 
@@ -38,6 +46,7 @@ const Window = ({ children, title }: { children: any; title: string }) => {
 					<WindowActionButtons
 						fullScreen={fullScreen}
 						onFullScreen={() => setFullScreen((prev) => !prev)}
+						onClose={onClose}
 					/>
 					<span className="text-sm">{title}</span>
 				</div>

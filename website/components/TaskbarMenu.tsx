@@ -14,12 +14,12 @@ export default function TaskbarMenu({
 	active: number | null;
 	title: any;
 	focused: boolean;
-	item: Object;
+	item: any;
 	onClick: (id: number) => any;
 	onActive: (id: number) => any;
 }) {
 	const [expanded, setExpanded] = useState(false);
-
+	console.log(item);
 	return (
 		<div className="relative">
 			<button
@@ -41,7 +41,7 @@ export default function TaskbarMenu({
 				{title}
 			</button>
 			{active == id && (
-				<div className="flex flex-col items-center absolute bg-stone-900/60 border border-stone-500 top-7  w-60 p-1 rounded-lg z-50">
+				<div className="flex flex-col items-center absolute bg-stone-900/60 backdrop-blur-md border border-stone-500 top-7 w-60 p-1 rounded-lg z-50">
 					{item?.menu?.map((item) => (
 						<>
 							{item.type == "2" ? (

@@ -1,9 +1,22 @@
-import { FaApple } from "react-icons/fa";
-import { format, compareAsc } from "date-fns";
-import { useEffect, useState } from "react";
+import { format } from "date-fns";
+import { useContext, useEffect, useState } from "react";
 import { IoSearch, IoPlayCircleOutline } from "react-icons/io5";
 import { IoIosWifi, IoIosBluetooth, IoIosSwitch } from "react-icons/io";
 import TaskbarMenu from "./TaskbarMenu";
+import { FaApple, FaTools } from "react-icons/fa";
+import {
+	FiClock,
+	FiDownload,
+	FiCloud,
+	FiGlobe,
+	FiFolder,
+	FiCommand,
+} from "react-icons/fi";
+import { HiOutlineDocument } from "react-icons/hi";
+import { IoIosHome, IoMdDesktop } from "react-icons/io";
+import { GrAppleAppStore } from "react-icons/gr";
+import { BsShift } from "react-icons/bs";
+import { AppCtx } from "../contexts/windowContext";
 
 const Taskbar = ({
 	overlay,
@@ -12,6 +25,8 @@ const Taskbar = ({
 	overlay: boolean;
 	onOverlay: (val: boolean) => any;
 }) => {
+	const context = useContext(AppCtx);
+
 	const [date, setDate] = useState(format(new Date(), "E d LLL H:m"));
 	const [focused, setFocused] = useState(false);
 	const [active, setActive] = useState(0);
@@ -36,7 +51,11 @@ const Taskbar = ({
 			id: 1,
 			title: <FaApple size={18} />,
 			menu: [
-				{ title: "About This Mac", type: 1 },
+				{
+					title: "About This Mac",
+					type: 1,
+					action: () => context?.setProfile(true),
+				},
 				{ type: 2 },
 				{ title: "System Preferences", type: 1 },
 				{ title: "App Store", type: 1 },
@@ -127,10 +146,132 @@ const Taskbar = ({
 				{ title: "Emoji & Symbols", type: 1 },
 			],
 		},
-		{ id: 6, title: "View" },
-		{ id: 7, title: "Go" },
-		{ id: 8, title: "Window" },
-		{ id: 9, title: "Help" },
+		{
+			id: 6,
+			title: "View",
+			menu: [
+				{ title: "as Icons", type: 1 },
+				{ title: "as List", type: 1 },
+				{ title: "as Columns", type: 1 },
+				{ title: "as Gallery", type: 1 },
+				{ type: 2 },
+				{ title: "Use Stacks", type: 1 },
+				{ title: "Sort By", type: 1 },
+				{ title: "Clean Up", type: 1 },
+				{ title: "Clean Up By", type: 1 },
+				{ type: 2 },
+				{ title: "Hide Sidebar", type: 1 },
+				{ title: "Hide Preview", type: 1 },
+				{ type: 2 },
+				{ title: "Hide Toolbar", type: 1 },
+				{ title: "Show All Tabs", type: 1 },
+				{ title: "Hide All Tabs", type: 1 },
+				{ title: "Hide Tab Bar", type: 1 },
+				{ title: "Hide Status Bar", type: 1 },
+				{ type: 2 },
+				{ title: "Customise Toolbar...", type: 1 },
+				{ title: "Customise Touch Bar", type: 1 },
+				{ type: 2 },
+				{ title: "Show View Options", type: 1 },
+				{ title: "Show Preview Options", type: 1 },
+				{ type: 2 },
+				{ title: "Enter Full Screen", type: 1 },
+			],
+		},
+		{
+			id: 7,
+			title: "Go",
+			menu: [
+				{ title: "Back", type: 1 },
+				{ title: "Forward", type: 1 },
+				{ title: "Select Startup disk", type: 1 },
+				{ type: 2 },
+				{ title: `Recents`, type: 1, iconLeft: <FiClock size={18} /> },
+				{
+					title: `Documents`,
+					type: 1,
+					iconLeft: <HiOutlineDocument size={18} />,
+				},
+				{
+					title: `Desktop`,
+					type: 1,
+					iconLeft: <IoMdDesktop size={18} />,
+				},
+				{
+					title: `Downloads`,
+					type: 1,
+					iconLeft: <FiDownload size={18} />,
+				},
+				{ title: `Home`, type: 1, iconLeft: <IoIosHome size={18} /> },
+				{
+					title: `Computer`,
+					type: 1,
+					iconLeft: <IoMdDesktop size={18} />,
+				},
+				{
+					title: `AirDrop`,
+					type: 1,
+					iconLeft: <FaApple size={18} />,
+				},
+				{
+					title: `Network`,
+					type: 1,
+					iconLeft: <FiGlobe size={18} />,
+				},
+				{
+					title: `iCloud Drive`,
+					type: 1,
+					iconLeft: <FiCloud size={18} />,
+				},
+				{ title: `Share`, type: 1, iconLeft: <FiFolder size={18} /> },
+				{
+					title: `Applications`,
+					type: 1,
+					iconLeft: <GrAppleAppStore size={18} />,
+				},
+				{
+					title: `[icon] Utilities`,
+					type: 1,
+					iconLeft: <FaTools size={18} />,
+				},
+				{ type: 2 },
+				{ title: `Recent Folders`, type: 1 },
+				{ type: 2 },
+				{ title: `Go to Folder...`, type: 1 },
+				{ title: `Connect to Server`, type: 1 },
+			],
+		},
+		{
+			id: 8,
+			title: "Window",
+			menu: [
+				{ title: "Minimise", type: 1 },
+				{ title: "Zoom", type: 1 },
+				{ title: "Move Window to Left", type: 1 },
+				{ title: "Move Window to Right", type: 1 },
+				{ title: "Replaced Tiled Window", type: 1 },
+				{ title: "Cycle Through Windows", type: 1 },
+				{ title: "Show Progress Window", type: 1 },
+				{ type: 2 },
+				{ title: "Show Previous Tab", type: 1 },
+				{ title: "Show Next Tab", type: 1 },
+				{ title: "Move Tab to New Window", type: 1 },
+				{ title: "Merge All Windows", type: 1 },
+				{ type: 2 },
+				{ title: "Bring All to Front", type: 1 },
+			],
+		},
+		{
+			id: 9,
+			title: "Help",
+			menu: [
+				{ title: "[ input for search ]", type: 1 },
+				{ title: "macOs Help", type: 1 },
+				{ type: 2 },
+				{ title: "See What's New in macOs", type: 1 },
+				{ title: "New to Mac? Learn the Basics", type: 1 },
+			],
+		},
 	];
 
 	return (

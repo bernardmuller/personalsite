@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import OldProfileWindow from "./OldProfileWindow";
+import { AppCtx } from "../contexts/windowContext";
 
-const WindowManager = ({ profile }: { profile: boolean }) => {
-	if (profile) {
-		return <OldProfileWindow />;
+const WindowManager = () => {
+	const context = useContext(AppCtx);
+
+	if (context?.profile) {
+		return <OldProfileWindow onClose={() => context.setProfile(false)} />;
 	}
 	return null;
 };

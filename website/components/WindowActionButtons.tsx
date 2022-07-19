@@ -6,9 +6,11 @@ import { IoClose } from "react-icons/io5";
 const WindowActionButtons = ({
 	fullScreen,
 	onFullScreen,
+	onClose,
 }: {
 	fullScreen: boolean;
 	onFullScreen: any;
+	onClose: () => any;
 }) => {
 	const [hover, setHover] = useState(false);
 	return (
@@ -17,9 +19,13 @@ const WindowActionButtons = ({
 			onMouseEnter={() => setHover(true)}
 			onMouseLeave={() => setHover(false)}
 		>
-			<div className="flex justify-center flex-center rounded-full h-3.5 w-3.5 bg-mac-act-1-l">
+			<button
+				type="button"
+				onClick={onClose}
+				className="flex justify-center flex-center rounded-full h-3.5 w-3.5 bg-mac-act-1-l"
+			>
 				{hover && <IoClose size={15} className="fill-mac-act-1-d" />}
-			</div>
+			</button>
 			<div className="flex justify-center flex-center rounded-full h-3.5 w-3.5 bg-mac-act-2-l">
 				{hover && <HiMinus size={14} className="fill-mac-act-2-d" />}
 			</div>
