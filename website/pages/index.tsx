@@ -12,7 +12,10 @@ import { NextSeo } from "next-seo";
 const Home: NextPage = () => {
 	return (
 		<>
-			<NextSeo title="Bernard Muller" description="I am a passionate software engineer that loves building cool projects."} />
+			<NextSeo
+				title="Bernard Muller"
+				description="I am a passionate software engineer that loves building cool projects."
+			/>
 			<WindowProvider>
 				<div className="h-screen w-screen">
 					<Head>
