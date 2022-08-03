@@ -20,10 +20,6 @@ const Home: NextPage = () => {
 				<div className="h-screen w-screen">
 					<Head>
 						<title>Bernard Muller</title>
-						<meta
-							name="description"
-							content="Passionate software engineer that loves building cool projects."
-						/>
 						<link rel="icon" href="/favicon.ico" />
 					</Head>
 
